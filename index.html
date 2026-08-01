@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Atomic Design Challenge</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+
+<header>
+
+
+    <div class="title-area">
+
+
+        <h1>
+            ⚛ Atomic Design Challenge
+        </h1>
+
+
+        <p>
+            Design the most stable arrangement of electrons.
+        </p>
+
+
+    </div>
+
+
+
+
+    <div class="progress-card">
+
+
+        <span>
+            Mission
+        </span>
+
+
+        <h2>
+            Observe
+        </h2>
+
+
+
+        <div class="progress-bar">
+
+
+            <div 
+                class="progress-fill"
+                id="progressFill"
+                style="width:20%;">
+            </div>
+
+
+        </div>
+
+<div class="score-card">
+
+    <span>Score</span>
+
+    <h2 id="scoreText">0 / 10</h2>
+
+</div>
+
+updateScore(2);
+
+        <small id="progressText">
+            20% Complete
+        </small>
+
+
+
+    </div>
+
+
+
+</header>
+
+
+
+
+
+<!-- =====================================
+     MAIN CONTENT
+===================================== -->
+
+
+<main>
+
+
+
+<!-- ================= LEFT SIDE ================= -->
+
+
+<section class="board-section">
+
+
+
+    <!-- Mission Card -->
+
+
+    <div class="instruction-card">
+
+
+        <h2>
+            Your Mission
+        </h2>
+
+
+
+        <p>
+            Build the most stable atom.
+        </p>
+
+
+
+        <ul>
+
+            <li>
+                ✔ Use lower-energy orbitals whenever possible.
+            </li>
+
+
+            <li>
+                ✔ Reduce electron-electron repulsion.
+            </li>
+
+
+        </ul>
+
+
+
+    </div>
+
+
+
+
+
+
+    <!-- ================= ORBITAL BOARD ================= -->
+
+
+    <div class="orbital-board">
+
+
+
+        <h3 class="energy-title">
+            ↑ Higher Energy
+        </h3>
+
+
+
+
+
+        <!-- 3s ORBITAL -->
+
+
+        <div class="energy-row row-3s">
+
+
+            <span class="energy-label">
+                3s
+            </span>
+
+
+
+            <div 
+                class="orbital"
+                data-level="3"
+                data-subshell="s"
+                data-index="1"
+                data-electrons="0">
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+        <!-- 2p ORBITALS -->
+
+
+        <div class="energy-row row-2p">
+
+
+            <span class="energy-label">
+                2p
+            </span>
+
+
+
+
+            <div 
+                class="orbital"
+                data-level="2"
+                data-subshell="p"
+                data-index="1"
+                data-electrons="0">
+            </div>
+
+
+
+            <div 
+                class="orbital"
+                data-level="2"
+                data-subshell="p"
+                data-index="2"
+                data-electrons="0">
+            </div>
+
+
+
+
+            <div 
+                class="orbital"
+                data-level="2"
+                data-subshell="p"
+                data-index="3"
+                data-electrons="0">
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- 2s ORBITAL -->
+
+
+        <div class="energy-row row-2s">
+
+
+            <span class="energy-label">
+                2s
+            </span>
+
+
+
+
+            <div 
+                class="orbital"
+                data-level="2"
+                data-subshell="s"
+                data-index="1"
+                data-electrons="0">
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- 1s ORBITAL -->
+
+
+        <div class="energy-row row-1s">
+
+
+            <span class="energy-label">
+                1s
+            </span>
+
+
+
+
+            <div 
+                class="orbital"
+                data-level="1"
+                data-subshell="s"
+                data-index="1"
+                data-electrons="0">
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <h3 class="energy-title">
+            ↓ Lower Energy
+        </h3>
+
+
+
+    </div>
+
+<!-- =====================================
+     ENERGY LADDER
+===================================== -->
+
+
+<div class="panel-card energy-ladder-card">
+
+
+<h3>
+Electron Energy Ladder
+</h3>
+
+
+<p>
+Lower energy orbitals are more stable.
+</p>
+
+
+
+<div class="energy-ladder">
+
+
+<div class="energy-level high">
+
+3p
+
+</div>
+
+
+<div class="energy-level">
+
+3s
+
+</div>
+
+
+
+<div class="energy-level">
+
+2p
+
+</div>
+
+
+
+<div class="energy-level">
+
+2s
+
+</div>
+
+
+
+<div class="energy-level low">
+
+1s
+
+</div>
+
+
+
+</div>
+
+
+
+<p id="energyExplanation">
+
+Observe how orbital energy affects stability.
+
+</p>
+
+
+</div>
+
+<!-- =====================================
+     ENERGY MOVEMENT ANIMATION
+===================================== -->
+
+
+<div class="panel-card">
+
+
+<h3>
+Energy Movement Experiment
+</h3>
+
+
+
+<p>
+
+Try moving an electron between orbitals.
+
+Observe the energy change.
+
+</p>
+
+
+
+<div class="movement-area">
+
+
+<div class="electron-dot"
+id="movingElectron">
+
+●
+
+</div>
+
+
+</div>
+
+
+
+<button
+class="answer-btn"
+onclick="moveElectronDown()">
+
+Move to Lower Energy
+
+</button>
+
+
+
+
+<button
+class="answer-btn"
+onclick="moveElectronUp()">
+
+Move to Higher Energy
+
+</button>
+
+
+
+<p id="movementFeedback">
+
+
+</p>
+
+
+
+</div>
+
+<!-- ===============================
+     APARTMENT GAME
+================================ -->
+
+
+<div class="apartment-game">
+
+
+    <h2>
+        Electron Apartment Challenge
+    </h2>
+
+
+    <p>
+        Place electrons in the most stable rooms.
+    </p>
+
+
+
+
+    <div class="apartment">
+
+
+        <!-- Higher Energy -->
+
+        <div class="floor-label">
+            Higher Energy
+        </div>
+
+
+
+
+        <!-- 3s ROOM -->
+
+        <div class="floor floor-3s">
+
+
+            <span>
+                Floor 3 (3s)
+            </span>
+
+
+            <div class="room"
+                 data-room="3s"
+                 data-energy="3">
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- 2p ROOM -->
+
+
+        <div class="floor floor-2p">
+
+
+            <span>
+                Floor 2 (2p)
+            </span>
+
+
+
+            <div class="room"
+                 data-room="2p1"
+                 data-energy="2">
+
+            </div>
+
+
+
+            <div class="room"
+                 data-room="2p2"
+                 data-energy="2">
+
+            </div>
+
+
+
+            <div class="room"
+                 data-room="2p3"
+                 data-energy="2">
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+        <!-- 2s ROOM -->
+
+
+        <div class="floor floor-2s">
+
+
+            <span>
+                Floor 2 (2s)
+            </span>
+
+
+
+            <div class="room"
+                 data-room="2s"
+                 data-energy="2">
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <!-- 1s ROOM -->
+
+
+        <div class="floor floor-1s">
+
+
+            <span>
+                Floor 1 (1s)
+            </span>
+
+
+
+            <div class="room"
+                 data-room="1s"
+                 data-energy="1">
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="floor-label">
+
+            Lower Energy
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+    <!-- ================= ELECTRON TRAY ================= -->
+
+
+    <div class="electron-tray">
+
+
+
+        <h2>
+            Electron Tray
+        </h2>
+
+
+
+
+        <div class="electron-container">
+
+
+
+            <div 
+                class="electron"
+                id="e1"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+            <div 
+                class="electron"
+                id="e2"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+
+            <div 
+                class="electron"
+                id="e3"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+
+            <div 
+                class="electron"
+                id="e4"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+
+            <div 
+                class="electron"
+                id="e5"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+
+            <div 
+                class="electron"
+                id="e6"
+                draggable="true">
+
+                e⁻
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+<button 
+class="reset-button"
+onclick="resetAtom()">
+
+🔄 Reset Atom
+
+</button>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= RIGHT SIDE ================= -->
+
+
+<aside class="side-panel">
+
+
+
+
+
+    <!-- ENERGY -->
+
+
+    <div class="panel-card">
+
+
+        <h3>
+            Orbital Energy
+        </h3>
+
+
+
+        <div class="meter">
+
+
+            <div 
+                class="meter-fill"
+                id="energyFill">
+
+            </div>
+
+
+        </div>
+
+
+
+        <p id="energyText">
+
+            Low
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- REPULSION -->
+
+
+    <div class="panel-card">
+
+
+        <h3>
+            Electron Repulsion
+        </h3>
+
+
+
+        <div class="meter">
+
+
+            <div 
+                class="meter-fill"
+                id="repulsionFill">
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <p id="repulsionText">
+
+            Very Low
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- HINT -->
+
+
+    <div class="panel-card">
+
+
+        <h3>
+            Scientific Hint
+        </h3>
+
+
+
+
+        <p id="hint">
+
+            Drag electrons into orbitals and observe what happens.
+
+        </p>
+
+
+
+    </div>
+
+<!-- MISSION PANEL -->
+
+<div class="panel-card mission-card">
+
+    <h3>
+        Mission Challenge
+    </h3>
+
+
+    <p id="missionQuestion">
+
+        Which arrangement of electrons is more stable?
+
+    </p>
+
+
+
+    <div class="answer-buttons">
+
+
+        <button 
+            class="answer-btn"
+            onclick="checkAnswer('A')">
+
+            Arrangement A
+
+        </button>
+
+
+
+        <button 
+            class="answer-btn"
+            onclick="checkAnswer('B')">
+
+            Arrangement B
+
+        </button>
+
+
+    </div>
+
+
+
+    <p id="missionFeedback">
+
+        Choose the best arrangement.
+
+    </p>
+
+
+</div>
+
+
+
+
+
+    <!-- FEEDBACK -->
+
+
+    <div class="panel-card">
+
+
+        <h3>
+            Feedback
+        </h3>
+
+
+
+
+        <p id="feedback">
+
+            Ready to begin your investigation!
+
+        </p>
+
+
+
+    </div>
+
+
+<!-- EXPLANATION MODE -->
+
+
+<div class="panel-card">
+
+
+    <h3>
+        Explain Your Thinking
+    </h3>
+
+
+
+    <p>
+
+        Why is this electron arrangement stable?
+
+    </p>
+
+
+
+
+    <textarea
+        id="explanationInput"
+        placeholder="Write your scientific explanation here...">
+
+    </textarea>
+
+
+
+
+    <button
+        class="submit-explanation"
+        onclick="checkExplanation()">
+
+        Submit Explanation
+
+    </button>
+
+
+
+
+    <p id="explanationFeedback">
+
+
+    </p>
+
+
+
+</div>
+
+
+<!-- =====================================
+     COMPARE & PREDICT
+===================================== -->
+
+
+<div class="panel-card">
+
+
+    <h3>
+        Compare Configurations
+    </h3>
+
+
+
+    <p>
+
+        Which arrangement has lower electron-electron repulsion?
+
+    </p>
+
+
+
+    <div class="comparison-box">
+
+
+        <button
+        class="config-card"
+        onclick="checkComparison('A')">
+
+
+            <h4>
+                Arrangement A
+            </h4>
+
+
+            <p>
+                2p
+                <br>
+                ↑↓ &nbsp; ↑ &nbsp; _
+            </p>
+
+
+        </button>
+
+
+
+
+
+        <button
+        class="config-card"
+        onclick="checkComparison('B')">
+
+
+            <h4>
+                Arrangement B
+            </h4>
+
+
+            <p>
+                2p
+                <br>
+                ↑ &nbsp; ↑ &nbsp; ↑
+            </p>
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+
+    <p id="comparisonFeedback">
+
+        Make your prediction first.
+
+    </p>
+
+
+
+</div>
+
+<!-- =====================================
+     REAL ATOM CHALLENGE
+===================================== -->
+
+
+<div class="panel-card">
+
+
+<h3>
+    Real Atom Challenge
+</h3>
+
+
+
+<p>
+
+Choose an atom and build its electron configuration.
+
+</p>
+
+
+
+<select id="atomSelect">
+
+
+<option value="carbon">
+
+Carbon (Z = 6)
+
+</option>
+
+
+
+<option value="nitrogen">
+
+Nitrogen (Z = 7)
+
+</option>
+
+
+
+<option value="oxygen">
+
+Oxygen (Z = 8)
+
+</option>
+
+
+
+</select>
+
+
+
+
+<button
+class="submit-explanation"
+onclick="loadAtom()">
+
+Start Challenge
+
+</button>
+
+
+
+<p id="atomTask">
+
+
+Select an atom to begin.
+
+</p>
+
+
+<p id="atomFeedback">
+
+
+</p>
+
+
+
+
+
+<!-- =====================================
+     IONISATION ENERGY CHALLENGE
+===================================== -->
+
+
+<div class="panel-card">
+
+
+<h3>
+    Atomic Detective
+</h3>
+
+
+
+<p>
+
+Nitrogen and Oxygen have different first ionisation energies.
+
+</p>
+
+
+
+<div class="ie-config">
+
+
+<div>
+
+<h4>
+Nitrogen (N)
+</h4>
+
+
+<p>
+
+2p³
+
+<br>
+
+↑ &nbsp; ↑ &nbsp; ↑
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div>
+
+<h4>
+Oxygen (O)
+</h4>
+
+
+<p>
+
+2p⁴
+
+<br>
+
+↑↓ &nbsp; ↑ &nbsp; ↑
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<p>
+
+Which atom holds its electrons more strongly?
+
+</p>
+
+
+
+<button
+class="answer-btn"
+onclick="checkIE('N')">
+
+Nitrogen
+
+</button>
+
+
+
+<button
+class="answer-btn"
+onclick="checkIE('O')">
+
+Oxygen
+
+</button>
+
+
+
+<p id="ieFeedback">
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+    <!-- REFLECTION -->
+
+
+    <div class="panel-card">
+
+
+        <h3>
+            Think Like a Scientist
+        </h3>
+
+
+
+
+        <p>
+
+            Can any electron move to a lower-energy orbital?
+
+        </p>
+
+
+
+    </div>
+
+
+
+
+
+</aside>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+
+<footer>
+
+
+    Atomic Design Challenge
+
+    <span>
+        Version 1.0
+    </span>
+
+
+</footer>
+
+
+
+
+
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+
+<script src="js/app.js"></script>
+
+<script src="js/drag.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/missions.js"></script>
+
+<script src="js/evaluator.js"></script>
+
+<script src="js/explanation.js"></script>
+
+<script src="js/comparison.js"></script>
+
+<script src="js/atoms.js"></script>
+
+<script src="js/ionisation.js"></script>
+
+<script src="js/energy.js"></script>
+
+<script src="js/animation.js"></script>
+
+<script src="js/final.js"></script>
+
+</body>
+
+</html>
